@@ -1,0 +1,7 @@
+{
+    "$schema": "./global.json",
+    "sdk": {
+      "version": "5.0.404"
+    }
+  }
+  
