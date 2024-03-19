@@ -34,7 +34,7 @@ namespace ProEventos.API.Controllers
           }
         }
 
-        [HttpGet("{Id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
           try
