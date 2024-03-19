@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
-import { filter } from 'rxjs';
+import { eventoService } from '../services/evento.service';
+import { Evento } from '../models/Evento';
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
@@ -8,8 +9,8 @@ import { filter } from 'rxjs';
 })
 export class EventosComponent implements OnInit {
 
-  public eventos: any = []; 
-  public eventosFiltrados : any = [];
+  public eventos: Evento[] = []; 
+  public eventosFiltrados : Evento[] = [];
   larguraImagem: number = 150;
   margemImagem: number = 2;
   exibirImagem: boolean = true;
@@ -32,7 +33,7 @@ export class EventosComponent implements OnInit {
     );
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private eventoService : eventoService) { }
 
   ngOnInit(): void {
     this.getEventos();
@@ -43,12 +44,12 @@ export class EventosComponent implements OnInit {
   }
 
   public getEventos(): void{
-    this.http.get('https://localhost:5001/api/eventos').subscribe(
-      Response=> {
-        this.eventos = Response
+    this.eventoService.getEventos().subscribe(
+      (_eventos : Evento[]) => {
+        this.eventos = _eventos 
         this.eventosFiltrados = this.eventos
       },
-      Error => console.log(Error)
+      error => console.log(error)
       );
   }
 
