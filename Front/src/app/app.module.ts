@@ -4,17 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { EventosComponent } from './eventos/eventos.component';
-import { PalestrantesComponent } from './palestrantes/palestrantes.component';
-import { NavComponent } from './nav/nav.component';
-
-import { eventoService } from './services/evento.service';
-
-import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
-
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -22,6 +11,17 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ContatosComponent } from './components/contatos/contatos.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { TituloComponent } from './shared/titulo/titulo.component';
+import { eventoService } from './services/evento.service';
+import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 
 
 
@@ -30,7 +30,11 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AppComponent,
     EventosComponent,
     PalestrantesComponent,
+    DashboardComponent,
+    PerfilComponent,
+    ContatosComponent,
       NavComponent,
+      TituloComponent,
       DateTimeFormatPipe,
    ],
   imports: [

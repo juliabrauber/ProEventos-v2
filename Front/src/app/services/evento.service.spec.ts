@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { EventoService } from './evento.service';
+import { eventoService } from './evento.service';
 
 describe('Service: Evento', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [EventoService]
+      providers: [eventoService]
     });
   });
 
-  it('should ...', inject([EventoService], (service: EventoService) => {
+  it('should ...', inject([eventoService], (service: eventoService) => {
     expect(service).toBeTruthy();
   }));
 });
